@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Calender.css">
+    <title>A Calender App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calender">
+            <div class="left">
+                <h1 id="date">13</h1>
+              <h2 id="day">Sunday</h3>
+            </div>
+            <div class="right">
+                <h2 id="month">August</h3>
+                <h1 id="year">2023</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+     let date=document.getElementById("date");
+    //  Do not use Date as a variable because there is an inbuilt function as Date()
+     let Day=document.getElementById("day");
+     let Month=document.getElementById("month");
+     let Year=document.getElementById("year");
+
+     const today = new Date();  //here using Date() I am getting the current date
+    
+     console.log(today);
+
+    const weekDays = ["Sunday", "Monday" ,"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    const monthsName = ["January", "February", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    date.innerHTML = (today.getDate()<10?"0":"")+today.getDate();
+    Day.innerHTML = weekDays[today.getDay()];
+    Month.innerHTML = monthsName[today.getMonth()];
+    Year.innerHTML = today.getFullYear();
+       
+
+    </script>
+</body>
+</html>
